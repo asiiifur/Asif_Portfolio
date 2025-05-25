@@ -7,6 +7,17 @@
   "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
+      {
+  "name": "asif_portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://asiiifur.github.io/Asif_Portfolio",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    // ... your other dependencies
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
