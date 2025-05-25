@@ -504,7 +504,7 @@ mobileNavLinks.forEach((link) => {
 })
 
 // Enhanced typing animation
-const typingTexts = [".NET Developer", "Software Engineer", "Full Stack Developer", "Problem Solver", "Code Architect"]
+//const typingTexts = [".NET Developer", "Software Engineer", "Full Stack Developer", "Problem Solver", "Code Architect"]
 let currentTextIndex = 0
 let currentCharIndex = 0
 let isDeleting = false
