@@ -157,7 +157,7 @@ const skillsData = [
     title: "Version Control & Tools",
     icon: "github",
     color: "red",
-    skills: ["Git", "SVN", "Trello", "Ice Scrum"],
+    skills: ["SVN","Git", "Trello"],
   },
   {
     title: "Methodologies",
@@ -240,7 +240,7 @@ const projectsData = [
     description: "Complete HR Management Solution with payroll, attendance, and employee self-service",
     technologies: ["ASP.NET", "Web API", "SQL Server", "Angular"],
     status: "Active",
-    type: "SaaS",
+    type: "Web App",
     gradient: "from-green-600 to-blue-600",
     icon: "👥",
   },
