@@ -339,66 +339,63 @@ function renderSkills() {
 
 // Enhanced render projects
 function renderProjects() {
-  const projectsGrid = document.getElementById("projects-grid")
+  const projectsGrid = document.getElementById("projects-grid");
 
   projectsData.forEach((project, index) => {
-    const projectCard = document.createElement("div")
+    const projectCard = document.createElement("div");
     projectCard.className =
-      "group bg-white/10 dark:bg-gray-800/10 backdrop-blur-xl border border-white/20 dark:border-gray-700/20 hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-500 hover:scale-105 overflow-hidden cursor-pointer rounded-2xl"
-    projectCard.style.animationDelay = `${index * 0.1}s`
+      "group bg-white/10 dark:bg-gray-800/10 backdrop-blur-xl border border-white/20 dark:border-gray-700/20 hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-500 hover:scale-105 overflow-hidden cursor-pointer rounded-2xl";
+    projectCard.style.animationDelay = `${index * 0.1}s`;
 
     projectCard.innerHTML = `
-            <div class="h-3 bg-gradient-to-r ${project.gradient}"></div>
-            <div class="p-8">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="text-xl">${project.icon}</div>
-                    <div class="flex gap-3">
-                        <span class="px-4 py-2 text-sm rounded-full ${project.status === "Active" ? "bg-green-500 text-white animate-pulse" : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"} font-semibold">
-                            ${project.status}
-                        </span>
-                        <span class="px-4 py-2 text-sm rounded-full border border-white/20 text-gray-600 dark:text-gray-300 font-semibold">
-                            ${project.type}
-                        </span>
-                    </div>
-                </div>
-                
-                <h3 class="text-xl font-bold mb-4 group-hover:text-blue-500 transition-colors">${project.name}</h3>
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-8 text-lg">${project.description}</p>
-                
-                <div class="space-y-8">
-                    <div>
-                        <p class="text-lg font-bold text-gray-500 dark:text-gray-400 mb-4">Technologies</p>
-                        <div class="flex flex-wrap gap-3">
-                            ${project.technologies
-                              .map(
-                                (tech) => `
-                                <span class="text-sm bg-white/20 dark:bg-gray-700/20 hover:bg-white/30 dark:hover:bg-gray-700/30 transition-colors px-3 py-2 rounded-lg font-medium">
-                                    ${tech}
-                                </span>
-                            `,
-                              )
-                              .join("")}
-                        </div>
-                    </div>
-                    
-                    <div class="flex justify-between items-center">
-                        <span class="text-lg text-gray-500 dark:text-gray-400 font-semibold">${project.period}</span>
-                        <div class="flex gap-3">
-                            <button class="opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-blue-500/20 px-4 py-2 rounded-lg text-lg font-medium">
-                                <i data-lucide="eye" class="h-5 w-5 mr-2 inline"></i>View
-                            </button>
-                            <button class="opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-purple-500/20 px-4 py-2 rounded-lg text-lg font-medium">
-                                <i data-lucide="external-link" class="h-5 w-5 inline"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `
+      <div class="h-2 bg-gradient-to-r ${project.gradient}"></div>
+      <div class="p-6">
+        <div class="flex justify-between items-start mb-4">
+          <div class="text-xl">${project.icon}</div>
+          <div class="flex gap-2">
+            <span class="px-3 py-1 text-xs rounded-full ${project.status === "Active" ? "bg-green-500 text-white animate-pulse" : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"} font-medium">
+              ${project.status}
+            </span>
+            <span class="px-3 py-1 text-xs rounded-full border border-white/20 text-gray-600 dark:text-gray-300 font-medium">
+              ${project.type}
+            </span>
+          </div>
+        </div>
 
-    projectsGrid.appendChild(projectCard)
-  })
+        <h3 class="text-lg font-semibold mb-2 group-hover:text-blue-500 transition-colors">${project.name}</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">${project.description}</p>
+
+        <div class="mb-4">
+          <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">Technologies</p>
+          <div class="flex flex-wrap gap-2">
+            ${project.technologies.map(
+              (tech) => `
+              <span class="text-xs bg-white/20 dark:bg-gray-700/20 hover:bg-white/30 dark:hover:bg-gray-700/30 transition-colors px-2 py-1 rounded font-medium">
+                ${tech}
+              </span>
+            `
+            ).join("")}
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center">
+          <span class="text-sm text-gray-500 dark:text-gray-400 font-medium">${project.period}</span>
+          <div class="flex gap-2">
+            <button class="opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-blue-500/20 px-2 py-1 rounded text-sm font-medium">
+              <i data-lucide="eye" class="h-4 w-4 mr-1 inline"></i>View
+            </button>
+            <button class="opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-purple-500/20 px-2 py-1 rounded text-sm font-medium">
+              <i data-lucide="external-link" class="h-4 w-4 inline"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    projectsGrid.appendChild(projectCard);
+  });
 }
+
 
 // Enhanced create contact sparkles
 function createContactSparkles() {
