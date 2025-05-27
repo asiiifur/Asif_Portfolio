@@ -1,308 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asifur Rahaman</title>
-  <meta name="description" content="Portfolio website of Asifur Rahaman, an experienced Software Engineer specializing in ASP.NET development">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  <link rel="stylesheet" href="styles.css">
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            primary: { DEFAULT: '#3b82f6', foreground: '#ffffff' },
-            secondary: { DEFAULT: '#f1f5f9', foreground: '#0f172a' },
-            muted: { DEFAULT: '#f1f5f9', foreground: '#64748b' },
-            background: '#ffffff',
-            foreground: '#0f172a',
-            card: { DEFAULT: '#ffffff', foreground: '#0f172a' },
-            border: '#e2e8f0'
-          },
-          animation: {
-            'float': 'float 6s ease-in-out infinite',
-            'gradient': 'gradient 3s ease infinite',
-            'shimmer': 'shimmer 2s infinite',
-            'bounce-slow': 'bounce 3s infinite'
-          },
-          spacing: { '18': '4.5rem', '88': '22rem', '128': '32rem', '144': '36rem' }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asifur Rahaman</title>
+    <meta name="description" content="Portfolio website of Asifur Rahaman, an experienced Software Engineer specializing in ASP.NET development">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#3b82f6',
+                            foreground: '#ffffff'
+                        },
+                        secondary: {
+                            DEFAULT: '#f1f5f9',
+                            foreground: '#0f172a'
+                        },
+                        muted: {
+                            DEFAULT: '#f1f5f9',
+                            foreground: '#64748b'
+                        },
+                        background: '#ffffff',
+                        foreground: '#0f172a',
+                        card: {
+                            DEFAULT: '#ffffff',
+                            foreground: '#0f172a'
+                        },
+                        border: '#e2e8f0'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient': 'gradient 3s ease infinite',
+                        'shimmer': 'shimmer 2s infinite',
+                        'bounce-slow': 'bounce 3s infinite'
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '88': '22rem',
+                        '128': '32rem',
+                        '144': '36rem'
+                    }
+                }
+            }
         }
-      }
-    }
-    document.addEventListener('DOMContentLoaded', function () {
-      const mobileMenu = document.getElementById("mobile-menu");
-      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-      const closeBtn = document.getElementById("close-mobile-menu");
-      mobileMenuBtn.addEventListener("click", () => {
+
+         const mobileMenu = document.getElementById("mobile-menu");
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const closeBtn = document.getElementById("close-mobile-menu");
+
+    mobileMenuBtn.addEventListener("click", () => {
         mobileMenu.classList.remove("pointer-events-none", "opacity-0");
         mobileMenu.querySelector("div:nth-child(2)").classList.remove("translate-x-full");
-      });
-      closeBtn.addEventListener("click", () => {
+    });
+
+    closeBtn.addEventListener("click", () => {
         mobileMenu.classList.add("pointer-events-none", "opacity-0");
         mobileMenu.querySelector("div:nth-child(2)").classList.add("translate-x-full");
-      });
     });
-  </script>
+        
+    </script>
 </head>
 <body class="min-h-screen transition-all duration-500 m-0.5" id="body">
-  <!-- Scroll Progress Bar -->
-  <div class="scroll-progress-container">
-    <div class="reading-progress" id="scroll-progress"></div>
-  </div>
-  <!-- Animated Background -->
-  <div class="fixed inset-0 -z-10 overflow-hidden" id="background">
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20"></div>
-    <div id="particles"></div>
-    <div class="absolute inset-0 opacity-30 transition-all duration-300" id="mouse-gradient"></div>
-    <div class="absolute top-32 left-5 w-44 h-44 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse"></div>
-    <div class="absolute bottom-32 right-5 w-60 h-60 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-    <div class="absolute top-1/2 left-1/4 w-36 h-36 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-2xl animate-pulse" style="animation-delay: 2s;"></div>
-  </div>
-  <div class="relative">
-    <!-- Header -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-      <nav class="relative z-50 w-full py-2">
+    <!-- Enhanced Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="reading-progress" id="scroll-progress"></div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="fixed inset-0 -z-10 overflow-hidden" id="background">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20"></div>
+        
+        <!-- Floating Particles -->
+        <div id="particles"></div>
+        
+        <!-- Interactive Gradient -->
+        <div class="absolute inset-0 opacity-30 transition-all duration-300" id="mouse-gradient"></div>
+        
+        <!-- Enhanced Geometric Shapes for Web -->
+        <div class="absolute top-32 left-20 w-64 h-64 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-32 right-20 w-80 h-80 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-1/4 w-48 h-48 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-2xl animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+
+    <div class="relative">
+        <!-- Enhanced Full Screen Header for Web -->
+
+<!-- Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+    <!-- Navigation Bar -->
+    <nav class="relative z-50 w-full py-2">
         <div class="absolute inset-0 bg-white/5 dark:bg-gray-900/5 backdrop-blur-2xl border-b border-white/10 dark:border-gray-700/10"></div>
         <div class="relative max-w-8xl mx-auto px-2 lg:px-4">
-          <div class="flex items-center justify-between">
-            <div class="relative group flex items-center gap-4">
-              <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-60 transition-all duration-700"></div>
-              <div class="w-14 h-14 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-2xl">
-                <span class="text-white font-bold text-sm">AR</span>
-              </div>
-              <span class="text-lg font-bold tracking-wide text-gray-900 dark:text-white">Asifur Rahaman</span>
-            </div>
-            <div class="hidden lg:flex items-center space-x-8">
-              <a href="#skills" class="nav-link group relative px-4 py-2 text-base font-semibold transition-all duration-300">
-                <span class="relative z-10 flex items-center gap-2"><span class="text-sm">⚡</span> Skills</span>
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                <div class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500"></div>
-              </a>
-              <a href="#experience" class="nav-link group relative px-4 py-2 text-base font-semibold transition-all duration-300">
-                <span class="relative z-10 flex items-center gap-2"><span class="text-sm">💼</span> Experience</span>
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                <div class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500"></div>
-              </a>
-              <a href="#projects" class="nav-link group relative px-4 py-2 text-base font-semibold transition-all duration-300">
-                <span class="relative z-10 flex items-center gap-2"><span class="text-sm">🚀</span> Projects</span>
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                <div class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500"></div>
-              </a>
-              <a href="#contact" class="nav-link group relative px-4 py-2 text-base font-semibold transition-all duration-300">
-                <span class="relative z-10 flex items-center gap-2"><span class="text-sm">📧</span> Contact</span>
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                <div class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500"></div>
-              </a>
-            </div>
-            <div class="flex items-center space-x-4">
-              <button id="theme-toggle" class="group relative p-3 rounded-xl bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300">
-                <i data-lucide="moon" class="h-6 w-6 text-blue-500 dark:hidden"></i>
-                <i data-lucide="sun" class="h-6 w-6 text-yellow-500 hidden dark:block"></i>
-              </button>
-              <a href="content/ASIFUR RAHAMAN _Resume.pdf" download class="hidden sm:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-base">
-                <i data-lucide="download" class="h-5 w-5"></i><span>Download CV</span>
-              </a>
-              <button id="mobile-menu-btn" class="lg:hidden relative p-3 rounded-xl bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300">
-                <div class="space-y-1">
-                  <div class="w-6 h-0.5 bg-current"></div>
-                  <div class="w-6 h-0.5 bg-current"></div>
-                  <div class="w-6 h-0.5 bg-current"></div>
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="relative group flex items-center gap-4">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-60 transition-all duration-700"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-2xl">
+                        <span class="text-white font-bold text-sm">AR</span>
+                    </div>
+                    <span class="text-xl font-bold tracking-wide text-gray-900 dark:text-white">Asifur Rahaman</span>
                 </div>
-              </button>
+
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center space-x-12">
+                    <a href="#skills" class="nav-link group relative px-6 py-4 text-lg font-semibold transition-all duration-300">
+                        <span class="relative z-10 flex items-center gap-3">
+                            <span class="text-sm">⚡</span> Skills
+                        </span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                        <div class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500"></div>
+                    </a>
+                    <a href="#experience" class="nav-link group relative px-6 py-4 text-lg font-semibold transition-all duration-300">
+                        <span class="relative z-10 flex items-center gap-3">
+                            <span class="text-sm">💼</span> Experience
+                        </span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                        <div class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500"></div>
+                    </a>
+                    <a href="#projects" class="nav-link group relative px-6 py-4 text-lg font-semibold transition-all duration-300">
+                        <span class="relative z-10 flex items-center gap-3">
+                            <span class="text-sm">🚀</span> Projects
+                        </span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                        <div class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500"></div>
+                    </a>
+                    <a href="#contact" class="nav-link group relative px-6 py-4 text-lg font-semibold transition-all duration-300">
+                        <span class="relative z-10 flex items-center gap-3">
+                            <span class="text-sm">📧</span> Contact
+                        </span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                        <div class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500"></div>
+                    </a>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex items-center space-x-6">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="group relative p-4 rounded-2xl bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300">
+                        <div class="relative">
+                            <i data-lucide="moon" class="h-6 w-6 text-blue-500 dark:hidden"></i>
+                            <i data-lucide="sun" class="h-6 w-6 text-yellow-500 hidden dark:block"></i>
+                        </div>
+                    </button>
+                    <!-- Download CV -->
+                 <a href="content/ASIFUR RAHAMAN _Resume.pdf" download class="hidden sm:flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg">
+    <i data-lucide="download" class="h-5 w-5"></i>
+    <span>Download CV</span>
+</a>
+                    <!-- Mobile Toggle -->
+                    <button id="mobile-menu-btn" class="lg:hidden relative p-4 rounded-2xl bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300">
+                        <div class="space-y-2">
+                            <div class="w-7 h-0.5 bg-current"></div>
+                            <div class="w-7 h-0.5 bg-current"></div>
+                            <div class="w-7 h-0.5 bg-current"></div>
+                        </div>
+                    </button>
+                </div>
             </div>
-          </div>
         </div>
-      </nav>
-    </header>
-    <div class="h-20 lg:h-24"></div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="lg:hidden fixed inset-0 z-[60] opacity-0 pointer-events-none transition-opacity duration-300">
-      <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-      <div class="absolute right-0 top-0 h-full w-72 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border-l border-white/20 dark:border-gray-700/20 transform translate-x-full transition-transform duration-300 z-[70]">
-        <div class="p-5 space-y-4">
-          <div class="flex justify-between items-center">
-            <h3 class="text-base font-semibold">Home</h3>
-            <button id="close-mobile-menu" class="p-2 rounded-lg hover:bg-white/10 dark:hover:bg-gray-800/10">
-              <i data-lucide="x" class="h-5 w-5"></i>
-            </button>
-          </div>
-          <nav class="space-y-2">
-            <a href="#skills" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/10 dark:hover:bg-gray-800/10"><span class="text-lg">⚡</span> Skills</a>
-            <a href="#experience" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/10 dark:hover:bg-gray-800/10"><span class="text-lg">💼</span> Experience</a>
-            <a href="#projects" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/10 dark:hover:bg-gray-800/10"><span class="text-lg">🚀</span> Projects</a>
-            <a href="#contact" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/10 dark:hover:bg-gray-800/10"><span class="text-lg">📧</span> Contact</a>
-          </nav>
-          <div class="pt-4 border-t border-white/20 dark:border-gray-700/20">
-            <a href="content/ASIFUR RAHAMAN _Resume.pdf" download class="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-xl shadow-lg">
-              <i data-lucide="download" class="h-4 w-4"></i><span>Download CV</span>
-            </a>
-          </div>
+    </nav>
+</header>
+<!-- Space below header -->
+<div class="h-[80px] lg:h-[100px]"></div>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="lg:hidden fixed inset-0 z-[60] opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+    <div class="absolute right-0 top-0 h-full w-80 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border-l border-white/20 dark:border-gray-700/20 transform translate-x-full transition-transform duration-300 z-[70]">
+        <div class="p-6 space-y-6">
+            <div class="flex justify-between items-center">
+                <h3 class="text-lg font-semibold">Home</h3>
+                <button id="close-mobile-menu" class="p-2 rounded-lg hover:bg-white/10 dark:hover:bg-gray-800/10">
+                    <i data-lucide="x" class="h-5 w-5"></i>
+                </button>
+            </div>
+            <nav class="space-y-4">
+
+            
+                <a href="#skills" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 dark:hover:bg-gray-800/10"><span class="text-xl">⚡</span> Skills</a>
+                <a href="#experience" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 dark:hover:bg-gray-800/10"><span class="text-xl">💼</span> Experience</a>
+                <a href="#projects" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 dark:hover:bg-gray-800/10"><span class="text-xl">🚀</span> Projects</a>
+                <a href="#contact" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 dark:hover:bg-gray-800/10"><span class="text-xl">📧</span> Contact</a>
+            
+            </nav>
+            <div class="pt-6 border-t border-white/20 dark:border-gray-700/20">
+              
+    <a href="content/ASIFUR RAHAMAN _Resume.pdf" download class="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-xl shadow-lg">
+    <i data-lucide="download" class="h-4 w-4"></i>
+    <span>Download CV</span>
+</a>
+
+            </div>
         </div>
-      </div>
     </div>
-    <main class="relative min-h-screen flex flex-col overflow-hidden">
-      <!-- Hero Content -->
-      <section class="flex-1 flex items-center justify-center px-2 py-4">
-        <div class="max-w-3xl mx-auto w-full text-center">
-          <div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-medium backdrop-blur-sm mb-2">
-            <div class="w-2 h-2 bg-emerald-500 rounded-full mr-2 animate-pulse"></div>
-            Available for new opportunities
-            <i data-lucide="sparkles" class="h-4 w-4 ml-1 animate-pulse"></i>
-          </div>
-          <div class="space-y-3 mb-2">
-            <h1 class="text-4xl sm:text-5xl font-bold leading-tight">
-              <span class="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">Asifur Rahaman</span>
-            </h1>
-            <div class="text-xl sm:text-2xl font-semibold">
-              <span id="typing-text" class="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">.NET Developer</span>
+</div>
+
+        <div class="relative min-h-screen flex flex-col overflow-hidden">
+        
+            <!-- Hero Content -->
+            <div class="flex-1 flex items-center justify-center px-2 py-4">
+                <div class="max-w-4xl mx-auto w-full text-center">
+                    <!-- Status Badge -->
+                    <div class="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-sm font-medium backdrop-blur-sm mb-3">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full mr-3 animate-pulse"></div>
+                        Available for new opportunities
+                        <i data-lucide="sparkles" class="h-4 w-4 ml-2 animate-pulse"></i>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <div class="space-y-6 mb-3">
+                        <h1 class="text-4xl sm:text-5xl lg:text-4xl xl:text-5xl font-bold leading-tight">
+                            <span class="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
+                                Asifur Rahaman
+                            </span>
+                        </h1>
+
+                        <!-- Title -->
+                        <div class="text-2xl sm:text-3xl lg:text-4xl font-semibold">
+                            <span id="typing-text" class="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                                .NET Developer
+                            </span>
+                      
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed mb-4">
+                        Software Engineer with 4+ years of experience specializing in ASP.NET and ASP.NET Core development. Building scalable web applications with full-stack development skills.
+                    </p>
+
+                    <!-- Social Links -->
+                    <div class="flex items-center justify-center gap-6 mb-6">
+                        <button onclick="window.open('https://github.com/asiiifur', '_blank')"
+                            class="group relative p-4 rounded-2xl bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300 hover:scale-110">
+                            <i data-lucide="github" class="h-8 w-8 group-hover:text-gray-900 dark:group-hover:text-white transition-colors"></i>
+                        </button>
+                        <button onclick="window.open('https://www.linkedin.com/in/asiiifur', '_blank')"
+                            class="group relative p-4 rounded-2xl bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300 hover:scale-110">
+                            <i data-lucide="linkedin" class="h-8 w-8 group-hover:text-blue-600 transition-colors"></i>
+                        </button>
+                   <button onclick="window.location.href='mailto:asif121527@gmail.com'"
+                            class="group relative p-4 rounded-2xl bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300 hover:scale-110">
+                            <i data-lucide="mail" class="h-8 w-8 group-hover:text-red-500 transition-colors"></i>
+                        </button>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="relative flex items-center justify-center gap-3">
+
+                   
+                                  <i data-lucide="download" class="h-5 w-5 group-hover:animate-bounce"></i>
+                                    <a href="content/ASIFUR RAHAMAN _Resume.pdf">
+                                               
+                            <span>Download CV</span>
+                                                
+                            </a>
+
+                        <i data-lucide="arrow-right" class="h-4 w-4 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </button>
+                        
+                        <button class="group relative px-8 py-4 bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border-2 border-white/20 dark:border-gray-700/20 hover:bg-white/20 dark:hover:bg-gray-800/20 font-semibold rounded-2xl transition-all duration-300 hover:scale-105">
+                            <div class="flex items-center justify-center gap-3">
+                                <i data-lucide="mail" class="h-5 w-5 group-hover:animate-pulse"></i>
+                                <span>Let's Talk</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
             </div>
-          </div>
-          <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed mb-3">
-            Software Engineer with 4+ years of experience specializing in ASP.NET and ASP.NET Core development. Building scalable web applications with full-stack development skills.
-          </p>
-          <div class="flex items-center justify-center gap-4 mb-4">
-            <button onclick="window.open('https://github.com/asiiifur', '_blank')" class="group relative p-3 rounded-xl bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300 hover:scale-110"><i data-lucide="github" class="h-7 w-7 group-hover:text-gray-900 dark:group-hover:text-white transition-colors"></i></button>
-            <button onclick="window.open('https://www.linkedin.com/in/asiiifur', '_blank')" class="group relative p-3 rounded-xl bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300 hover:scale-110"><i data-lucide="linkedin" class="h-7 w-7 group-hover:text-blue-600 transition-colors"></i></button>
-            <button onclick="window.location.href='mailto:asif121527@gmail.com'" class="group relative p-3 rounded-xl bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300 hover:scale-110"><i data-lucide="mail" class="h-7 w-7 group-hover:text-red-500 transition-colors"></i></button>
-          </div>
-          <div class="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="content/ASIFUR RAHAMAN _Resume.pdf" class="group relative px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden flex items-center gap-2">
-              <i data-lucide="download" class="h-5 w-5 group-hover:animate-bounce"></i>
-              <span>Download CV</span>
-              <i data-lucide="arrow-right" class="h-4 w-4 group-hover:translate-x-1 transition-transform"></i>
-            </a>
-            <a href="#contact" class="group relative px-6 py-3 bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border-2 border-white/20 dark:border-gray-700/20 hover:bg-white/20 dark:hover:bg-gray-800/20 font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-2">
-              <i data-lucide="mail" class="h-5 w-5 group-hover:animate-pulse"></i>
-              <span>Let's Talk</span>
-            </a>
-          </div>
+
+          
         </div>
-      </section>
-      <!-- Skills Section -->
-      <section id="skills" class="py-8 px-2 lg:px-4">
-        <div class="max-w-5xl mx-auto">
-          <div class="text-center mb-6">
-            <h2 class="text-xl lg:text-2xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Skills & Expertise</h2>
-            <div class="mx-auto h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-1"></div>
-          </div>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="skills-grid">
-            <!-- Skills by JS -->
-          </div>
-        </div>
-      </section>
-      <!-- Experience Section -->
-      <section id="experience" class="py-8 px-2 lg:px-4 bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10">
-        <div class="max-w-4xl mx-auto">
-          <div class="text-center mb-6">
-            <h2 class="text-2xl lg:text-3xl font-bold mb-2 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Work Experience</h2>
-            <div class="mx-auto h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-1"></div>
-          </div>
-          <div class="relative">
-            <div class="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500"></div>
-            <div class="relative flex items-start mb-4">
-              <div class="absolute left-4 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-8 border-white dark:border-gray-900 shadow-xl"></div>
-              <div class="ml-16 bg-white/20 dark:bg-gray-800/20 backdrop-blur-xl border border-white/20 dark:border-gray-700/20 rounded-xl p-4">
-                <div class="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 class="text-lg font-bold mb-1">Software Engineer</h3>
-                    <p class="text-blue-600 dark:text-blue-400 font-bold text-base">Technology and Business Solution Limited</p>
-                  </div>
-                  <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold border border-blue-500/20">2021 - Present</span>
+
+    
+        <!-- Enhanced Skills Section -->
+        <section id="skills" class="py-8 px-2 lg:px-4">
+            <div class="max-w-8xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl lg:text-3xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        Skills & Expertise
+                    </h2>
+                    <div class="mx-auto h-2 w-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-3"></div>
+                   
                 </div>
-                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3 leading-relaxed">Leading development of enterprise applications and mentoring junior developers</p>
-                <div class="space-y-2">
-                  <div class="flex items-center gap-2"><i data-lucide="star" class="h-5 w-5 text-yellow-500"></i><span class="text-xs text-gray-600 dark:text-gray-300">Led 4 major projects</span></div>
-                  <div class="flex items-center gap-2"><i data-lucide="star" class="h-5 w-5 text-yellow-500"></i><span class="text-xs text-gray-600 dark:text-gray-300">Improved system performance by 40%</span></div>
-                  <div class="flex items-center gap-2"><i data-lucide="star" class="h-5 w-5 text-yellow-500"></i><span class="text-xs text-gray-600 dark:text-gray-300">Mentored 3 junior developers</span></div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4" id="skills-grid">
+                    <!-- Skills will be populated by JavaScript -->
                 </div>
-              </div>
+
+                
             </div>
-            <div class="relative flex items-start">
-              <div class="absolute left-4 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-8 border-white dark:border-gray-900 shadow-xl"></div>
-              <div class="ml-16 bg-white/20 dark:bg-gray-800/20 backdrop-blur-xl border border-white/20 dark:border-gray-700/20 rounded-xl p-4">
-                <div class="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 class="text-lg font-bold mb-1">Software Engineer [Intern]</h3>
-                    <p class="text-blue-600 dark:text-blue-400 font-bold text-base">Technology and Business Solution Limited</p>
-                  </div>
-                  <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold border border-blue-500/20">2021</span>
+        </section>
+
+        <!-- Enhanced Experience Timeline -->
+        <section id="experience" class="py-8 px-2 lg:px-4 bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-3 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                       Work Experience
+                    </h2>
+                       <div class="mx-auto h-2 w-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-3"></div>
                 </div>
-                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3 leading-relaxed">Learned software development processes and contributed to various projects</p>
-                <div class="space-y-2">
-                  <div class="flex items-center gap-2"><i data-lucide="star" class="h-5 w-5 text-yellow-500"></i><span class="text-xs text-gray-600 dark:text-gray-300">Completed 5 training modules</span></div>
-                  <div class="flex items-center gap-2"><i data-lucide="star" class="h-5 w-5 text-yellow-500"></i><span class="text-xs text-gray-600 dark:text-gray-300">Contributed to 3 projects</span></div>
-                  <div class="flex items-center gap-2"><i data-lucide="star" class="h-5 w-5 text-yellow-500"></i><span class="text-xs text-gray-600 dark:text-gray-300">Received excellent feedback</span></div>
+
+                <div class="relative">
+                    <div class="absolute left-12 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+
+                    <div class="relative flex items-start mb-6">
+                        <div class="absolute left-8 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-8 border-white dark:border-gray-900 shadow-xl"></div>
+
+                        <div class="ml-24 bg-white/20 dark:bg-gray-800/20 backdrop-blur-xl border border-white/20 dark:border-gray-700/20 hover:bg-white/30 dark:hover:bg-gray-800/30 transition-all duration-300 rounded-2xl p-4">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Software Engineer</h3>
+                                    <p class="text-blue-600 dark:text-blue-400 font-bold text-xl">Technology and Business Solution Limited</p>
+                                </div>
+                                <span class="px-6 py-3 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-lg font-semibold border border-blue-500/20">
+                                    2021 - Present
+                                </span>
+                            </div>
+
+                            <p class="text-base text-gray-600 dark:text-gray-300 mb-6 text-xl leading-relaxed">Leading development of enterprise applications and mentoring junior developers</p>
+
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="star" class="h-6 w-6 text-yellow-500"></i>
+                                    <span class="text-xs text-gray-600 dark:text-gray-300">Led 4 major projects</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="star" class="h-6 w-6 text-yellow-500"></i>
+                                    <span class="text-xs text-gray-600 dark:text-gray-300">Improved system performance by 40%</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="star" class="h-6 w-6 text-yellow-500"></i>
+                                    <span class="text-xs text-gray-600 dark:text-gray-300">Mentored 3 junior developers</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative flex items-start">
+                        <div class="absolute left-8 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-8 border-white dark:border-gray-900 shadow-xl"></div>
+
+                        <div class="ml-24 bg-white/20 dark:bg-gray-800/20 backdrop-blur-xl border border-white/20 dark:border-gray-700/20 hover:bg-white/30 dark:hover:bg-gray-800/30 transition-all duration-300 rounded-2xl p-4">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Software Engineer [Intern]</h3>
+                                    <p class="text-blue-600 dark:text-blue-400 font-bold text-xl">Technology and Business Solution Limited</p>
+                                </div>
+                                <span class="px-6 py-3 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-lg font-semibold border border-blue-500/20">
+                                    2021
+                                </span>
+                            </div>
+
+                            <p class="text-base text-gray-600 dark:text-gray-300 mb-6 text-xl leading-relaxed">Learned software development processes and contributed to various projects</p>
+
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="star" class="h-6 w-6 text-yellow-500"></i>
+                                    <span class="text-xs text-gray-600 dark:text-gray-300">Completed 5 training modules</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="star" class="h-6 w-6 text-yellow-500"></i>
+                                    <span class="text-xs text-gray-600 dark:text-gray-300">Contributed to 3 projects</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="star" class="h-6 w-6 text-yellow-500"></i>
+                                    <span class="text-xs text-gray-600 dark:text-gray-300">Received excellent feedback</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <!-- Projects Section -->
-      <section id="projects" class="py-8 px-2 lg:px-4">
-        <div class="max-w-5xl mx-auto">
-          <div class="text-center mb-6">
-            <h2 class="text-2xl lg:text-3xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Featured Projects</h2>
-            <div class="mx-auto h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-1"></div>
-          </div>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4" id="projects-grid">
-            <!-- Projects by JS -->
-          </div>
-        </div>
-      </section>
-      <!-- Contact Section -->
-      <section id="contact" class="py-8 px-2 lg:px-4">
-        <div class="max-w-3xl mx-auto text-center">
-          <div class="relative bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-6 text-white overflow-hidden">
-            <div class="absolute inset-0 opacity-20" id="contact-sparkles"></div>
-            <div class="relative z-10">
-              <i data-lucide="rocket" class="h-16 w-16 mx-auto mb-2 animate-bounce-slow"></i>
-              <h2 class="text-2xl lg:text-3xl font-bold mb-2">Let's Create Magic Together</h2>
-              <p class="text-lg lg:text-xl text-blue-100 mb-3 max-w-2xl mx-auto leading-relaxed">
-                Ready to transform your ideas into extraordinary digital experiences? Let's collaborate and build something that will amaze the world! ✨
-              </p>
-              <div class="flex flex-wrap justify-center gap-4 mb-4">
-                <button class="bg-white text-blue-600 hover:bg-gray-100 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 px-6 py-3 font-bold text-sm">
-                  <i data-lucide="mail" class="h-5 w-5 mr-2 inline"></i>asif121527@gmail.com
-                </button>
-                <button class="border-2 border-white text-white hover:bg-white hover:text-blue-600 rounded-3xl transition-all duration-300 hover:scale-105 px-6 py-3 font-bold text-sm">
-                  <i data-lucide="phone" class="h-5 w-5 mr-2 inline"></i>+880 1756626839
-                </button>
-              </div>
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="text-center group">
-                  <i data-lucide="target" class="h-10 w-10 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300"></i>
-                  <h3 class="font-bold text-lg mb-2">Precision</h3>
-                  <p class="text-blue-100 text-base">Pixel-perfect attention to detail</p>
+        </section>
+
+        <!-- Enhanced Projects Section -->
+        <section id="projects" class="py-8 px-2 lg:px-4">
+            <div class="max-w-8xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-3 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                        Featured Projects
+                    </h2>
+                       <div class="mx-auto h-2 w-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-3"></div>
+                 
                 </div>
-                <div class="text-center group">
-                  <i data-lucide="users" class="h-10 w-10 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300"></i>
-                  <h3 class="font-bold text-lg mb-2">Collaboration</h3>
-                  <p class="text-blue-100 text-base">Seamless teamwork and communication</p>
+
+                <div class="grid lg:grid-cols-2 gap-6" id="projects-grid">
+                    <!-- Projects will be populated by JavaScript -->
                 </div>
-                <div class="text-center group">
-                  <i data-lucide="award" class="h-10 w-10 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300"></i>
-                  <h3 class="font-bold text-lg mb-2">Excellence</h3>
-                  <p class="text-blue-100 text-base">Delivering beyond expectations</p>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <!-- Footer -->
-      <footer class="py-8 px-4 lg:px-8 border-t border-gray-200/20 dark:border-gray-700/20">
-        <div class="max-w-5xl mx-auto text-center">
-          <p class="text-xs text-gray-600 dark:text-gray-300">
-            &copy; <span id="current-year"></span> Asifur Rahaman. Crafted with <span class="text-red-500 animate-pulse text-lg">❤️</span> and lots of <span class="text-yellow-600 text-lg">☕</span>
-          </p>
-        </div>
-      </footer>
-    </main>
-  </div>
-  <script src="script.js"></script>
+        </section>
+
+        <!-- Enhanced Contact Section -->
+        <section id="contact" class="py-8 px-2 lg:px-4">
+            <div class="max-w-6xl mx-auto text-center">
+                <div class="relative bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-6 text-white overflow-hidden">
+                    <!-- Animated Background Elements -->
+                    <div class="absolute inset-0 opacity-20" id="contact-sparkles">
+                        <!-- Sparkles will be added by JavaScript -->
+                    </div>
+
+                    <div class="relative z-10">
+                        <i data-lucide="rocket" class="h-24 w-24 mx-auto mb-3 animate-bounce-slow"></i>
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-3">Let's Create Magic Together</h2>
+                        <p class="text-2xl lg:text-3xl text-blue-100 mb-4 max-w-4xl mx-auto leading-relaxed">
+                            Ready to transform your ideas into extraordinary digital experiences? Let's collaborate and build
+                            something that will amaze the world! ✨
+                        </p>
+
+                        <div class="flex flex-wrap justify-center gap-6 mb-6">
+                            <button class="bg-white text-blue-600 hover:bg-gray-100 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 px-10 py-6 font-bold text-sm">
+                                <i data-lucide="mail" class="h-6 w-6 mr-3 inline"></i>
+                                asif121527@gmail.com
+                            </button>
+                            <button class="border-4 border-white text-white hover:bg-white hover:text-blue-600 rounded-3xl transition-all duration-300 hover:scale-105 px-10 py-6 font-bold text-sm">
+                                <i data-lucide="phone" class="h-6 w-6 mr-3 inline"></i>
+                                +880 1756626839
+                            </button>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="text-center group">
+                                <i data-lucide="target" class="h-16 w-16 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"></i>
+                                <h3 class="font-bold text-2xl mb-4">Precision</h3>
+                                <p class="text-blue-100 text-lg">Pixel-perfect attention to detail</p>
+                            </div>
+                            <div class="text-center group">
+                                <i data-lucide="users" class="h-16 w-16 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"></i>
+                                <h3 class="font-bold text-2xl mb-4">Collaboration</h3>
+                                <p class="text-blue-100 text-lg">Seamless teamwork and communication</p>
+                            </div>
+                            <div class="text-center group">
+                                <i data-lucide="award" class="h-16 w-16 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"></i>
+                                <h3 class="font-bold text-2xl mb-4">Excellence</h3>
+                                <p class="text-blue-100 text-lg">Delivering beyond expectations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Footer -->
+        <footer class="py-12 px-8 lg:px-12 border-t border-gray-200/20 dark:border-gray-700/20">
+            <div class="max-w-8xl mx-auto text-center">
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                    &copy; <span id="current-year"></span> Asifur Rahaman. Crafted with 
+                    <span class="text-red-500 animate-pulse text-2xl">❤️</span> and lots of 
+                    <span class="text-yellow-600 text-2xl">☕</span>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
+    
 </html>
