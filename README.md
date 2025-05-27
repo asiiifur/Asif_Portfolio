@@ -18,12 +18,10 @@ A modern, responsive portfolio website showcasing my skills and projects as a .N
 
 - HTML5
 - CSS3 (with Tailwind CSS)
-- JavaScript (Vanilla)
-- Lucide Icons
+- JavaScript 
 
-## Deployment
 
-This portfolio is designed to be deployed on GitHub Pages.
+
 
 ### Steps to deploy:
 
@@ -75,13 +73,10 @@ Edit `index.html` to:
 - Efficient animations
 - Responsive images
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## Contact
 
 - Email: asif121527@gmail.com
 - Phone: +880 1756626839
-- LinkedIn: [Your LinkedIn Profile]
-- GitHub: [Your GitHub Profile]
+- LinkedIn: [https://www.linkedin.com/in/asiiifur/]
+- GitHub: [https://github.com/asiiifur]
