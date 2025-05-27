@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asifur Rahaman - Software Engineer Portfolio</title>
+    <title>Asifur Rahaman</title>
     <meta name="description" content="Portfolio website of Asifur Rahaman, an experienced Software Engineer specializing in ASP.NET development">
     
     <!-- Tailwind CSS -->
@@ -83,6 +83,38 @@
 
     <div class="relative">
         <!-- Enhanced Full Screen Header for Web -->
+
+          <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <nav class="max-w-8xl mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <span class="text-white font-bold text-sm">AR</span>
+                </div>
+                <span class="font-semibold text-lg">Asifur Rahaman</span>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex space-x-6">
+                <a href="#skills" class="text-sm font-medium hover:text-blue-500 transition">Skills</a>
+                <a href="#experience" class="text-sm font-medium hover:text-blue-500 transition">Experience</a>
+                <a href="#projects" class="text-sm font-medium hover:text-blue-500 transition">Projects</a>
+                <a href="#contact" class="text-sm font-medium hover:text-blue-500 transition">Contact</a>
+            </div>
+
+            <!-- Right actions -->
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+                    <i data-lucide="moon" class="dark:hidden w-5 h-5"></i>
+                    <i data-lucide="sun" class="hidden dark:inline w-5 h-5"></i>
+                </button>
+                <a href="#" class="hidden sm:flex px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg text-sm font-medium hover:scale-105 transition">
+                    <i data-lucide="download" class="w-4 h-4 mr-2"></i>Download CV
+                </a>
+            </div>
+        </nav>
+    </header>
         <header class="relative min-h-screen flex flex-col overflow-hidden">
             <!-- Enhanced Navigation Bar -->
             <nav class="relative z-50 w-full py-2">
@@ -288,15 +320,7 @@
           
         </header>
 
-        <!-- Stats Section -->
-        <section class="py-6 px-2 lg:px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="stats-grid">
-                    <!-- Stats will be populated by JavaScript -->
-                </div>
-            </div>
-        </section>
-
+    
         <!-- Enhanced Skills Section -->
         <section id="skills" class="py-8 px-2 lg:px-4">
             <div class="max-w-8xl mx-auto">
