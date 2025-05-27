@@ -246,11 +246,11 @@ header {
 
 /* Responsive improvements */
 @media (max-width: 640px) {
-  .text-5xl {
+  .text-xl {
     font-size: 1rem;
   }
 
-  .sm\:text-6xl {
+  .sm\:text-xl {
     font-size: 1rem;
   }
 
@@ -258,7 +258,7 @@ header {
     font-size: 1rem;
   }
 
-  .sm\:text-3xl {
+  .sm\:text-xl {
     font-size: 1rem;
   }
 }
