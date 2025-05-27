@@ -351,7 +351,7 @@ function renderProjects() {
             <div class="h-3 bg-gradient-to-r ${project.gradient}"></div>
             <div class="p-8">
                 <div class="flex justify-between items-start mb-6">
-                    <div class="text-5xl">${project.icon}</div>
+                    <div class="text-xl">${project.icon}</div>
                     <div class="flex gap-3">
                         <span class="px-4 py-2 text-sm rounded-full ${project.status === "Active" ? "bg-green-500 text-white animate-pulse" : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"} font-semibold">
                             ${project.status}
@@ -362,7 +362,7 @@ function renderProjects() {
                     </div>
                 </div>
                 
-                <h3 class="text-3xl font-bold mb-4 group-hover:text-blue-500 transition-colors">${project.name}</h3>
+                <h3 class="text-xl font-bold mb-4 group-hover:text-blue-500 transition-colors">${project.name}</h3>
                 <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-8 text-lg">${project.description}</p>
                 
                 <div class="space-y-8">
