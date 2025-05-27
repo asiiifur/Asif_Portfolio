@@ -569,7 +569,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupSmoothScrolling()
   setupScrollAnimations()
   setCurrentYear()
-  typeText()
+//  typeText()
   initializeScrollProgress()
 
   // Re-initialize Lucide icons after dynamic content is added
