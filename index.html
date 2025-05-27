@@ -57,21 +57,7 @@
                 }
             }
                 }
-        document.addEventListener('DOMContentLoaded', function () {
-        const mobileMenu = document.getElementById("mobile-menu");
-        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-        const closeBtn = document.getElementById("close-mobile-menu");
-        
-        mobileMenuBtn.addEventListener("click", () => {
-        mobileMenu.classList.remove("pointer-events-none", "opacity-0");
-        mobileMenu.querySelector("div:nth-child(2)").classList.remove("translate-x-full");
-            });
-        
-        closeBtn.addEventListener("click", () => {
-        mobileMenu.classList.add("pointer-events-none", "opacity-0");
-        mobileMenu.querySelector("div:nth-child(2)").classList.add("translate-x-full");
-            });
-                
+     
     </script>
 </head>
 <body class="min-h-screen transition-all duration-500 m-0.5" id="body">
